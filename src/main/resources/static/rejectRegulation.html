@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <title>退订规则</title>
+
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
+    <meta name="viewport" content="width=device-width"/>
+
+
+    <!-- Bootstrap core CSS     -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Animation library for notifications   -->
+    <link href="assets/css/animate.min.css" rel="stylesheet"/>
+
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet"/>
+
+
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="assets/css/demo.css" rel="stylesheet"/>
+    <link href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <!--<link href="css/select2.css">-->
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!--<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>-->
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet"/>
+    <link href="css/icon.css" rel="stylesheet">
+    <style type="text/css">
+        .zxx_list_title {
+            background: #eeeeee;
+            border: 1px solid #cccccc;
+            padding: 1em;
+        }
+
+        .zxx_list_content {
+            padding: 1em;
+        }
+
+        #tinybox {
+            position: absolute;
+            display: none;
+            padding: 10px 50px;
+            background: #e3e3e3 /*url(images/preload.gif) no-repeat 50% 50%*/;
+            border: 2px solid #9f9f9f;
+            z-index: 2000;
+            border-radius: 100px;
+        }
+
+        #tinymask {
+            position: absolute;
+            display: none;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: #000000;
+            z-index: 1500;
+            border-radius: 12px;
+        }
+
+        #tinycontent {
+            background: #e3e3e3;
+            font-size: 1.1em;
+            font-family: "Microsoft YaHei", Poppins-Regular;
+            border-radius: 12px;
+        }
+    </style>
+    <script src="/js/tinybox.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+
+    <div class="main-panel">
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">退订规则</h4>
+                            </div>
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <table class="table table-hover">
+                                                <tr>
+                                                    <th>退订时间</th>
+                                                    <th>返还数字</th>
+                                                </tr>
+                                                    <tr>
+                                                        <td>1min以内</td>
+                                                        <td>退还成交价的90%</td>
+                                                    </tr>
+                                                <tr>
+                                                    <td>5min以内</td>
+                                                    <td>退还成交价的60%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>10min以内</td>
+                                                    <td>退还成交价的30%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>10min之后</td>
+                                                    <td>无法退订</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button onclick="confirm()" class="btn btn-danger btn-fill">确认</button>
+                                <button onclick="cancel()" class="btn btn-info btn-fill pull-right">取消</button>
+                                <div class="clearfix"></div>
+                                <!--</form>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+
+<!--   Core JS Files   -->
+<script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+
+<!--  Charts Plugin -->
+<script src="assets/js/chartist.min.js"></script>
+
+<!--  Notifications Plugin    -->
+<script src="assets/js/bootstrap-notify.js"></script>
+<script src="assets/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
+<script src="js/rejectRegulation.js"></script>
+<script src="layer-v3.1.1/layer/layer.js"></script>
+</html>

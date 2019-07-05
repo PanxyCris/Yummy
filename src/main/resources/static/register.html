@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Register</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/css/tabOption.css">
+	<style type="text/css">
+		.zxx_list_title{background:#eeeeee; border:1px solid #cccccc; padding:1em;}
+		.zxx_list_content{padding:1em;}
+		#tinybox{position:absolute; display:none; padding:10px 50px; background:#e3e3e3 /*url(images/preload.gif) no-repeat 50% 50%*/; border:2px solid #9f9f9f; z-index:2000; border-radius: 100px;}
+		#tinymask{position:absolute; display:none; top:0; left:0; height:100%; width:100%; background:#000000; z-index:1500; border-radius: 12px;}
+		#tinycontent{background:#e3e3e3; font-size:1.1em; font-family: "Microsoft YaHei", Poppins-Regular; border-radius: 12px;}
+	</style>
+	<script src="/js/tab.js"></script>
+	<script src="/js/tinybox.js"></script>
+	<script type="text/javascript">
+        window.onload = function () { tabRegisterEmail(0); }
+	</script>
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('/images/img-01.jpg');">
+			<div class="wrap-login100 p-t-190 p-b-30">
+				<div class="login100-form validate-form">
+					<div class="login100-form-avatar">
+						<img src="images/avatar-01.jpg" alt="AVATAR">
+					</div>
+
+					<span class="login100-form-title p-t-20 p-b-45">
+						Yummy!
+					</span>
+
+					<div class="door_container">
+						<div class="TabTitle">
+							<ul id="myTab">
+								<li class="active" onclick=nTabs("registerEmailMember",this,0);>会员注册</li>
+								<li class="normal" onclick=nTabs("registerEmailCanteen",this,1);>餐厅注册</li>
+							</ul>
+						</div>
+						<div class="TabContent">
+							<div id=myTab_Content0><!-- 会员注册 -->
+								<div class="star">
+									<div>
+										<p class="register-msg" id="err_msg" style="text-align: right"></p>
+									</div>
+
+									<div class="wrap-input100 validate-input m-b-10">
+										<input class="input100" type="text" name="email" data-validate = "Valid email is: a@b.c" placeholder="Email">
+										<span class="focus-input100" data-placeholder="邮箱"></span><!-- Cell Phone Number -->
+										<span class="symbol-input100">
+							                <i class="fa fa-mail-forward"></i>
+						                </span>
+									</div>
+
+									<!--<div class="wrap-input100 validate-input m-b-10">-->
+                                    <!--<span class="btn-getVeriCode">-->
+                                        <!--<input class="sendVeriCode" id="send" value="获取验证码" />-->
+                                    <!--</span>-->
+										<!--<input class="input100" type="text" name="verification">-->
+										<!--<span class="focus-input100" data-placeholder="验证码"></span>&lt;!&ndash; Verification Code &ndash;&gt;-->
+										<!--<span class="symbol-input100">-->
+							                <!--<i class="fa fa-code"></i>-->
+						                <!--</span>-->
+									<!--</div>-->
+
+									<div class="wrap-input100 validate-input m-b-10" data-validate="Enter password" placeholder="Password">
+						            <!--<span class="btn-show-pass">-->
+							            <!--<i class="zmdi zmdi-eye"></i>-->
+						            <!--</span>-->
+										<input class="input100" type="password" name="pass" placeholder="Password">
+                                        <span class="symbol-input100">
+							                <i class="fa fa-lock"></i>
+						                </span>
+										<span class="focus-input100" data-placeholder="密码"></span><!-- Password -->
+									</div>
+
+									<!--<div class="wrap-input100 validate-input" data-validate="Enter password">
+                                            <span class="btn-show-pass">
+                                                <i class="zmdi zmdi-eye"></i>
+                                            </span>
+                                        <input class="input100" type="password" name="pass">
+                                        <span class="focus-input100" data-placeholder="Password Again"></span>
+                                    </div>-->
+									<div class="container-login100-form-btn p-t-10">
+										<button class="login100-form-btn" onclick="registerMsgByEmail()">
+											注册
+										</button>
+									</div>
+									<!--<div class="container-login100-form-btn p-t-10">-->
+										<!--<div class="wrap-login100-form-btn">-->
+											<!--&lt;!&ndash;<div class="login100-form-bgbtn"></div>&ndash;&gt;-->
+											<!--<a class="login100-form-btn" href="#" id="register_btn" onclick="registerMsg();">-->
+												<!--注册&lt;!&ndash; Sign Up &ndash;&gt;-->
+											<!--</a>-->
+										<!--</div>-->
+									<!--</div>-->
+									<!--<script type="text/javascript">
+                                        T$('register_btn').onclick = function(){
+                                            registerMsg();  // 方法registerMsg()的定义见于js/register.js
+                                        }
+                                    </script>-->
+
+									<div class="text-center p-t-115">
+										<br /><br />
+										<span class="txt1">
+							            已有账号？<!-- Already have an account? -->
+						            </span>
+
+										<a class="txt2" href="/login.html">
+											<strong>去登录</strong><!-- <em>Sign In</em> -->
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="none" id=myTab_Content1><!-- 餐厅注册 -->
+								<!--</div></div></div>-->
+								<div class="star">
+									<div>
+										<p class="register-msg" id="err_msg2" style="text-align: right"></p>
+									</div>
+
+									<div class="wrap-input100 validate-input m-b-10" data-validate="Enter password">
+						            <span class="btn-show-pass">
+							            <i class="zmdi zmdi-eye"></i>
+						            </span>
+										<input class="input100" type="password" name="pass" placeholder="Enter password">
+										<span class="focus-input100" data-placeholder="密码"></span>
+										<span class="symbol-input100">
+							                <i class="fa fa-lock"></i>
+						                </span>
+									</div>
+									<div class="container-login100-form-btn p-t-10">
+										<button class="login100-form-btn" onclick="registerCanteen()">
+											注册
+										</button>
+									</div>
+									<!--<div class="container-login100-form-btn p-t-10" style="margin-top: 30px;">-->
+										<!--<div class="wrap-login100-form-btn">-->
+											<!--&lt;!&ndash;<div class="login100-form-bgbtn"></div>&ndash;&gt;-->
+											<!--<a class="login100-form-btn" href="#" id="register_btn2" onclick="registerMsgEnterprise();">-->
+												<!--注册&lt;!&ndash; disabled="disabled" &ndash;&gt;-->
+											<!--</a>-->
+										<!--</div>-->
+									<!--</div>-->
+									<!--<script type="text/javascript">
+                                        T$('register_btn2').onclick = function(){
+                                            registerMsgByEmail();  // 方法registerMsg()的定义见于js/registerEmail.js
+                                        }
+                                    </script>-->
+
+									<div class="text-center p-t-115">
+										<!--<a class="txt1" href="registerByEmail.html">[邮箱注册]</a>
+                                        <br /><br />-->
+										<span class="txt1">
+							            已有账号？
+                                    </span>
+
+										<a class="txt2" href="/login.html">
+											<strong>去登录</strong>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--<div class="login100-form-avatar">-->
+						<!--<img src="images/avatar-01.jpg" alt="AVATAR">-->
+					<!--</div>-->
+
+					<!--<span class="login100-form-title p-t-20 p-b-45">-->
+						<!--Yummy!-->
+					<!--</span>-->
+
+					<!--<div class="wrap-input100 validate-input m-b-10" data-validate = "Username is required">-->
+						<!--<input class="input100" type="text" name="username" placeholder="Username">-->
+						<!--<span class="focus-input100"></span>-->
+						<!--<span class="symbol-input100">-->
+							<!--<i class="fa fa-user"></i>-->
+						<!--</span>-->
+					<!--</div>-->
+
+					<!--<div class="wrap-input100 validate-input m-b-10" data-validate = "Password is required">-->
+						<!--<input class="input100" type="password" name="pass" placeholder="Password">-->
+						<!--<span class="focus-input100"></span>-->
+						<!--<span class="symbol-input100">-->
+							<!--<i class="fa fa-lock"></i>-->
+						<!--</span>-->
+					<!--</div>-->
+					<!--<div class="wrap-input100 validate-input m-b-10" data-validate = "Password is required">-->
+						<!--<input class="input100" type="password" name="pass" placeholder="Password">-->
+						<!--<span class="focus-input100"></span>-->
+						<!--<span class="symbol-input100">-->
+							<!--<i class="fa fa-lock"></i>-->
+						<!--</span>-->
+					<!--</div>-->
+					<!--<div class="container-login100-form-btn p-t-10">-->
+						<!--<button class="login100-form-btn">-->
+							<!--Login-->
+						<!--</button>-->
+					<!--</div>-->
+
+					<!--<div class="text-center w-full p-t-25 p-b-230">-->
+						<!--<a href="#" class="txt1">-->
+							<!--Forgot Username / Password?-->
+						<!--</a>-->
+					<!--</div>-->
+
+					<!--<div class="text-center w-full">-->
+						<!--<a class="txt1" href="register.html">-->
+							<!--Create new account-->
+							<!--<i class="fa fa-long-arrow-right"></i>						-->
+						<!--</a>-->
+					<!--</div>-->
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+<!--===============================================================================================-->
+	<script src="/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/vendor/bootstrap/js/popper.js"></script>
+	<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="/vendor/select2/select2.min.js"></script>
+	<script src="layer-v3.1.1/layer/layer.js"></script>
+<!--===============================================================================================-->
+	<script src="/js/main.js"></script>
+	<script src="/js/register.js"></script>
+</body>
+</html>

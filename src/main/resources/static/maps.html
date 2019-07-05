@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <title>查看地图</title>
+    <script type="text/javascript"
+            src="http://api.map.baidu.com/api?v=3.0&ak=7tfThudqLk1Q4ZLhrBSqsEEcj76pXafi"></script>
+    <style type="text/css">
+        body, html, #container {
+            width: 1000px;
+            height: 500px;
+            overflow: hidden;
+            margin: 0;
+            margin-top: 20px;
+            font-family: "微软雅黑";
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<h1>查看</h1>
+</body>
+</html>
+<script type="text/javascript">
+    var mp = new BMap.Map("container");
+
+    var geolocation = new BMap.Geolocation();
+    geolocation.getCurrentPosition(function (r) {
+        if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+            var address = r.address;
+            var location = address.province + address.city + address.district + address.street;
+            console.log(location);
+            var mk = new BMap.Marker(r.point);
+            mp.addOverlay(mk);
+            mp.panTo(r.point);
+            mp.centerAndZoom(r.point, 12);
+            mp.enableScrollWheelZoom();
+            console.log(r.point);
+            // alert('您的位置：'+r.point.lng+','+r.point.lat);
+        }
+        else {
+            console.log('failed' + this.getStatus());
+        }
+    }, {enableHighAccuracy: true})
+</script>
+<script src="js/map.js"></script>

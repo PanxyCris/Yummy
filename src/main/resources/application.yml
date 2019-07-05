@@ -1,0 +1,52 @@
+server:
+  port: 8000
+  charset: UTF-8
+debug: false
+spring:
+  mail:
+    host: smtp.163.com
+    username: yummy0095@163.com
+    password: yummy161
+    default-encoding: UTF-8
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: UTF-8
+    mode: HTML
+    cache: false
+    servlet:
+      content-type: text/html
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: usemysql
+    url: jdbc:mysql://localhost:3306/Yummy?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC&tinyInt1isBit=true
+  jpa:
+    database: mysql
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+      naming:
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    properties:
+      dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+      hibernate:
+        enable_lazy_load_no_trans: true
+    open-in-view: true
+  aop:
+    auto: true
+constant:
+  codeLength: 6
+  codeKey: keyyek
+
+IPIRatio:
+  RMBRatio: 1
+  IPPointRatio: 1
+  profitRatio: 1
+  memberRatio: 1
+  userRatio: 1
